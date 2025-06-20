@@ -72,7 +72,7 @@
         <option value="Student counselling">Student counselling</option>
         <option value="Others">Others</option>
     </select>
-    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="number" id="phoneNumber" placeholder="Your Phone Number" required>
 </div>
 
                     <div class="form-row full-width">
@@ -196,10 +196,10 @@
             const name = document.getElementById("name").value.trim();
             const place = document.getElementById("place").value.trim();
             const problem = document.getElementById("problem").value.trim();
-            const email = document.getElementById("email").value.trim();
+            const phoneNumber = document.getElementById("phoneNumber").value.trim();
             const message = document.getElementById("message").value.trim();
 
-            if (!name || !place || !problem || !email) {
+            if (!name || !place || !problem || !phoneNumber) {
                 alert("Please fill in all the required fields.");
                 return;
             }
@@ -208,14 +208,14 @@
             whatsappMessage += `Name: ${encodeURIComponent(name)}%0A`;
             whatsappMessage += `Place: ${encodeURIComponent(place)}%0A`;
             whatsappMessage += `Problem: ${encodeURIComponent(problem)}%0A`;
-            whatsappMessage += `Email: ${encodeURIComponent(email)}`;
-            
+            whatsappMessage += `Phone Number: ${encodeURIComponent(phoneNumber)}`;
+
             if (message) {
                 whatsappMessage += `%0AAdditional Message: ${encodeURIComponent(message)}`;
             }
 
-            const phoneNumber = "919072076552"; // your number
-            const url = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+            const phNumber = "919072076552"; // your number
+            const url = `https://wa.me/${phNumber}?text=${whatsappMessage}`;
             window.open(url, "_blank");
         }
     </script>
